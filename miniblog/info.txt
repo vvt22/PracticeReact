@@ -1,0 +1,11 @@
+Recap
+we can assign numbers, strings, etc to variables and output them within curly braces in template, it is called dynamic value. for example:
+const greetings = 'hello world'
+const num = 50
+<div>{ greetings }</div>
+<div>{ num }</div>
+we can also output data directly inside curly braces such as 
+data { 10 }, string { 'hi, there ! },array  { [1, 2, 3, 4, 5] }, or evaluation { Math.random() * 10 }, etc.
+we can also assign dynamic value to attribute, for instance, 
+const link = 'https://.google.com.tw'
+<a href={ llink }>about</a>
