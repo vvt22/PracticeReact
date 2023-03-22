@@ -1,5 +1,7 @@
-Recap
-1. we install 'Simple React Snippets' plugin to faciliate building process
-2. to generate react component boilerplate in no time, we simply type sfc and press 'tab' key 
-3. we don't need to manually type 'import component from component-path, we enter <Component then hit enter to automatically generate import statement
-thats it !!!
+Better to do this instead of inline styling. 
+
+Const styles = { /* style go here */ }
+
+<div style={styles} > 
+...
+</div>
