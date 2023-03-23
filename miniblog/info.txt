@@ -1,7 +1,1 @@
-Better to do this instead of inline styling. 
-
-Const styles = { /* style go here */ }
-
-<div style={styles} > 
-...
-</div>
+to use hook :import it from react

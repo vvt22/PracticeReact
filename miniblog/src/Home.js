@@ -1,19 +1,19 @@
+import { useState } from "react";
 const Home = () => {
-  const handleClick = (e) => {
-    console.log("hello ninjas", e);
+  const [name, setName] = useState("nikhil"); //syntax for usestate
+  const [age, setAge] = useState(21);
+  const handleClick = () => {
+    setName("rohit"); //used as function to change the state of the variable
+    setAge(25);
   };
 
-  const handleClickAgain = (name, e) => {
-    console.log("hello " + name, e.target);
-  };
   return (
     <div className="home">
       <h2>Home page</h2>
+      <p>
+        {name} is {age} year old
+      </p>
       <button onClick={handleClick}>Click me</button>
-      <button onClick={(e) => handleClickAgain("mario", e)}>
-        Click me again
-      </button>
-      {/* used when to pass a argument to function */}
     </div>
   );
 };
