@@ -16,11 +16,15 @@ const Home = () => {
       id: 3,
     },
   ]);
+  const handleDelete = (id) => {
+    const newBlogs = blogs.filter((blog) => blog.id !== id);
+    setBlogs(newBlogs);
+  };
   //props is been passed through bloglist
 
   return (
     <div className="home">
-      <BlogList blogs={blogs} title="All Blogs" />
+      <BlogList blogs={blogs} title="All Blogs" handleDelete={handleDelete} />
       <BlogList
         blogs={blogs.filter((blog) => blog.author === "vineet")}
         title="Vineet's Blogs"
