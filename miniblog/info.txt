@@ -1,3 +1,7 @@
 to use hook :import it from react
 useeffect hook run on every render of function.
 //here the component is rendered initially  and also rendered when the state changes 
+to control the render (only certain render)use dependency array
+//the dependency array is passed as second arg
+if [] is passed ,then useeffect will run only first render
+//mention the state in the array to run for that particular render
