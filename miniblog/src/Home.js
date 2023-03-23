@@ -1,4 +1,5 @@
 import { useState } from "react";
+import BlogList from "./BlogList";
 const Home = () => {
   const [blogs, setBlogs] = useState([
     { title: "My new website", body: "lorem ipsum...", author: "navi", id: 1 },
@@ -15,16 +16,11 @@ const Home = () => {
       id: 3,
     },
   ]);
+  //props is been passed through bloglist
 
   return (
     <div className="home">
-      {blogs.map((blog) => (
-        <div className="blog-preview" key={blog.id}>
-          {/* id must be used to root element */}
-          <h2>{blog.title}</h2>
-          <p>Written by {blog.author}</p>
-        </div>
-      ))}
+      <BlogList blogs={blogs} title="All Blogs" />
     </div>
   );
 };
