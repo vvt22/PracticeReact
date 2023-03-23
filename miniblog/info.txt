@@ -1,1 +1,3 @@
 to use hook :import it from react
+useeffect hook run on every render of function.
+//here the component is rendered initially  and also rendered when the state changes 
