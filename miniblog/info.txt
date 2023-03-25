@@ -1,7 +1,11 @@
-to use hook :import it from react
-useeffect hook run on every render of function.
-//here the component is rendered initially  and also rendered when the state changes 
-to control the render (only certain render)use dependency array
-//the dependency array is passed as second arg
-if [] is passed ,then useeffect will run only first render
-//mention the state in the array to run for that particular render
+here we are using a package called json server-a fake rest api just using a json file.
+here the top level property is considered as resources.
+next use the json file:
+two option:-either install json server package locally   or
+use npx library : npx json-server --watch data/db.json --port 8000 
+//this is gonna create us a api endpoint
+.
+.refer this to actually create a db.json 
+https://github.com/typicode/json-server
+i did:npm install -g json-server
+then:json-server --watch db.json --port 3004
