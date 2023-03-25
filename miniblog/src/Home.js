@@ -3,15 +3,26 @@ import BlogList from "./BlogList";
 const Home = () => {
   const [blogs, setBlogs] = useState(null); //instead we can use [] in place of null
   const [isPending, setisPending] = useState(true);
+  const [error, setError] = useState(null);
   useEffect(() => {
     fetch("http://localhost:3004/blogs")
       .then((res) => {
+        if (!res.ok) {
+          // error coming back from server
+          throw Error("could not fetch the data for that resource");
+        }
         return res.json();
       })
       .then((data) => {
         console.log(data);
         setBlogs(data);
         setisPending(false);
+        setError(null);
+      })
+      .catch((err) => {
+        // auto catches network / connection error
+        setisPending(false);
+        setError(err.message);
       });
   }, []);
   //props is been passed through bloglist
@@ -26,6 +37,7 @@ const Home = () => {
 
   return (
     <div className="home">
+      {error && <div>{error}</div>}
       {isPending && <div>Loading</div>}
       {blogs && ( //conditional templating or dynamic checking(logical and)
         <BlogList blogs={blogs} title="All Blogs" />
