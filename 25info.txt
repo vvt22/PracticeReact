@@ -1,0 +1,38 @@
+In App.js:
+<Route path="/blogs/:id">
+              <BlogDetails />
+            </Route>
+.
+.
+.
+.
+NEW BlogDetails.js:
+import { useParams } from "react-router-dom";   //to access the parameter
+
+const BlogDetails = () => {
+  const { id } = useParams();
+
+  return (
+    <div className="blog-details">
+      <h2>Blog details - { id }</h2>
+    </div>
+  );
+}
+ 
+export default BlogDetails;
+.
+.
+.
+.
+.
+.
+In BlogList.js:
+{blogs.map(blog => (
+        <div className="blog-preview" key={blog.id} >
+          <Link to={`/blogs/${blog.id}`}>
+            <h2>{ blog.title }</h2>
+            <p>Written by { blog.author }</p>
+          </Link>
+        </div>
+      ))}
+
